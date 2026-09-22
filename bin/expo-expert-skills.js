@@ -69,7 +69,7 @@ Install professional agent skills for Expo / React Native development.
 Usage:
   ${PACKAGE_NAME} install                    Install all five skills
   ${PACKAGE_NAME} install all                Install all five skills
-  ${PACKAGE_NAME} install <skill-name>       Install a single skill
+  ${PACKAGE_NAME} install <skill-name> [skill-name ...]  Install one or more skills
   ${PACKAGE_NAME} list                       List the available skills
   ${PACKAGE_NAME} help                       Show this help
 
@@ -79,7 +79,7 @@ Examples:
   ${PACKAGE_NAME} install expo-error-resolver expo-safe-refactor
 
 Skills are installed into:
-  ~/.claude/skills/
+  ~/.agents/skills/
 
 Override the destination directory with the EXPO_EXPERT_SKILLS_DIR
 environment variable.
@@ -108,7 +108,7 @@ function destinationRoot() {
   if (process.env.EXPO_EXPERT_SKILLS_DIR) {
     return path.resolve(process.env.EXPO_EXPERT_SKILLS_DIR);
   }
-  return path.join(os.homedir(), '.claude', 'skills');
+  return path.join(os.homedir(), '.agents', 'skills');
 }
 
 // Copy a directory recursively. Overwrites existing files with the same name,

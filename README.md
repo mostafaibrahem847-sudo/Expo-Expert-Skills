@@ -68,7 +68,8 @@ npx expo-expert-skills list
 npx expo-expert-skills help
 ```
 
-By default, skills are installed into `~/.claude/skills/`. Override the destination with the
+By default, skills are installed into `~/.agents/skills/`, the shared global skills directory
+used by compatible agents such as Pi and OpenCode. Override the destination with the
 `EXPO_EXPERT_SKILLS_DIR` environment variable:
 
 ```bash
@@ -87,7 +88,7 @@ The skills are plain Markdown instruction files, so they work with any coding ag
 read project files. How you point your agent at them depends on the agent:
 
 - **Skill-aware agents** load a skills directory automatically. Drop the skill folder(s) into
-  that directory (for example, the installer targets `~/.claude/skills/`).
+  that directory (for example, the installer targets `~/.agents/skills/`).
 - **Other agents** (Cursor, Codex, opencode, etc.): paste the relevant `SKILL.md` content into
   your `AGENTS.md` / rules file and keep each skill's `references/` folder in the repo so the
   agent can open it when needed.
