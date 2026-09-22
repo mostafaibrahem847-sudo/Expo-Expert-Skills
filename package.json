@@ -11,9 +11,7 @@
   "bugs": {
     "url": "https://github.com/mostafaibrahem847-sudo/Expo-Expert-Skills/issues"
   },
-  "bin": {
-    "expo-expert-skills": "bin/expo-expert-skills.js"
-  },
+  "bin": "bin/expo-expert-skills.js",
   "files": [
     "bin",
     "expo-parity-engineer",
