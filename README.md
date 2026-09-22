@@ -40,8 +40,7 @@ The collection contains five skills:
 
 ## Installation
 
-This repository is being prepared for publishing to npm. Once published, you will be able to
-install the skills with a single command:
+The package is published to npm. Install the skills with a single command:
 
 ```bash
 npx expo-expert-skills install
@@ -68,30 +67,25 @@ npx expo-expert-skills list
 npx expo-expert-skills help
 ```
 
-By default, skills are installed into `~/.agents/skills/`, the shared global skills directory
-used by compatible agents such as Pi and OpenCode. Override the destination with the
-`EXPO_EXPERT_SKILLS_DIR` environment variable:
+By default, skills are installed into `~/.agents/skills/`, the global skills directory defined
+by the Agent Skills standard. This single shared location is auto-discovered by compatible
+agents such as Pi and OpenCode, so one installation serves them all. Override the destination
+with the `EXPO_EXPERT_SKILLS_DIR` environment variable:
 
 ```bash
 EXPO_EXPERT_SKILLS_DIR=/path/to/your/skills npx expo-expert-skills install
 ```
-
-> **Note:** npm publication has not happened yet. The commands above document the intended
-> usage of the included CLI; they are not currently runnable via `npx`.
-
-Until then, you can use the skills directly from this repository by copying the folder(s) you
-want into wherever your agent loads skills from (see [Usage](#usage)).
 
 ## Usage
 
 The skills are plain Markdown instruction files, so they work with any coding agent that can
 read project files. How you point your agent at them depends on the agent:
 
-- **Skill-aware agents** load a skills directory automatically. Drop the skill folder(s) into
-  that directory (for example, the installer targets `~/.agents/skills/`).
-- **Other agents** (Cursor, Codex, opencode, etc.): paste the relevant `SKILL.md` content into
-  your `AGENTS.md` / rules file and keep each skill's `references/` folder in the repo so the
-  agent can open it when needed.
+- **Agent Skills-compatible agents** (Pi and OpenCode) discover skills installed into
+  `~/.agents/skills/` automatically — no extra step needed.
+- **Other agents** (Cursor, Codex, etc.): paste the relevant `SKILL.md` content into your
+  `AGENTS.md` / rules file and keep each skill's `references/` folder in the repo so the agent
+  can open it when needed.
 
 Then name the skill you want at the start of your request:
 

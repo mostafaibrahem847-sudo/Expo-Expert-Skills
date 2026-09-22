@@ -104,6 +104,16 @@ function packageSkillsRoot() {
 }
 
 // Resolve the destination directory for installed skills.
+//
+// The default is the Agent Skills standard global skills directory:
+//
+//   ~/.agents/skills/
+//
+// This is a single shared location that is auto-discovered by Agent
+// Skills-compatible harnesses such as Pi and OpenCode, so one installation
+// serves every compatible agent without duplicating the skills.
+//
+// `EXPO_EXPERT_SKILLS_DIR` always overrides the default destination.
 function destinationRoot() {
   if (process.env.EXPO_EXPERT_SKILLS_DIR) {
     return path.resolve(process.env.EXPO_EXPERT_SKILLS_DIR);
@@ -202,4 +212,11 @@ function main() {
   return 1;
 }
 
-process.exitCode = main();
+try {
+  process.exitCode = main();
+} catch (error) {
+  // Guarantee a non-zero exit code for any unexpected failure, and surface a
+  // clear message instead of an unhandled stack trace.
+  fail(`Unexpected error: ${error && error.stack ? error.stack : error}`);
+  process.exitCode = 1;
+}
