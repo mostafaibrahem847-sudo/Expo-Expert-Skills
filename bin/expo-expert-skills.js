@@ -18,7 +18,7 @@ const path = require('node:path');
 
 const PACKAGE_NAME = 'expo-expert-skills';
 
-// The five skills shipped in this package. This list is the single source of
+// The ten skills shipped in this package. This list is the single source of
 // truth for what the installer knows how to copy. The order is stable so that
 // `list` output is deterministic.
 const SKILLS = [
@@ -47,6 +47,31 @@ const SKILLS = [
     description:
       'Analyzes and upgrades the visual design of an Expo / React Native app to feel premium.',
   },
+  {
+    name: 'expo-accessibility-auditor',
+    description:
+      'Reviews and improves accessibility: screen reader support, touch targets, color contrast, focus order, RTL accessibility, and dynamic text sizing.',
+  },
+  {
+    name: 'expo-dependency-upgrade',
+    description:
+      'Safely upgrades the Expo SDK and/or npm dependencies, handling breaking changes and deprecated APIs.',
+  },
+  {
+    name: 'expo-release-manager',
+    description:
+      'Prepares and manages Expo builds and releases: EAS Build, versioning, EAS Submit, OTA updates, and secrets setup.',
+  },
+  {
+    name: 'expo-supabase-guardian',
+    description:
+      'Reviews and improves the Supabase backend: schema, RLS policies, auth setup, storage buckets, and query safety.',
+  },
+  {
+    name: 'expo-test-writer',
+    description:
+      'Writes and maintains automated tests with Jest and React Native Testing Library.',
+  },
 ];
 
 const SKILL_NAMES = SKILLS.map((skill) => skill.name);
@@ -67,8 +92,8 @@ function help() {
 Install professional agent skills for Expo / React Native development.
 
 Usage:
-  ${PACKAGE_NAME} install                    Install all five skills
-  ${PACKAGE_NAME} install all                Install all five skills
+  ${PACKAGE_NAME} install                    Install all ten skills
+  ${PACKAGE_NAME} install all                Install all ten skills
   ${PACKAGE_NAME} install <skill-name> [skill-name ...]  Install one or more skills
   ${PACKAGE_NAME} list                       List the available skills
   ${PACKAGE_NAME} help                       Show this help

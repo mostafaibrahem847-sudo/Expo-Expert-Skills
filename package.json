@@ -1,6 +1,6 @@
 {
   "name": "expo-expert-skills",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Professional agent skills for Expo and React Native development.",
   "license": "MIT",
   "repository": {
@@ -19,6 +19,11 @@
     "expo-safe-refactor",
     "expo-code-quality-analyzer",
     "expo-premium-design",
+    "expo-accessibility-auditor",
+    "expo-dependency-upgrade",
+    "expo-release-manager",
+    "expo-supabase-guardian",
+    "expo-test-writer",
     "README.md",
     "LICENSE"
   ],
